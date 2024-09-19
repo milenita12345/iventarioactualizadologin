@@ -12,16 +12,29 @@ class Transaccion extends Model
     protected $table = 'transacciones';
 
     protected $fillable = [
-        'producto_id', 
+        'tipo',
+        'persona_id',
         'fecha', 
-        'tipo', 
-        'precio', 
-        'cantidad'
+        'nombre_comprobante', 
+        'numero_comprobante', 
+        'user_id', 
+        'total',
+        'estado',
+        'eliminado'
     ];
 
-    //RELACIONS DE MODELO
-    public function producto()
+    public function detalles()
     {
-        return $this->belongsTo(Producto::class);
+        return $this->hasMany(DetalleTransaccion::class);
+    }
+
+    public function persona()
+    {
+        return $this->belongsTo(Persona::class, 'persona_id');
+    }
+
+    public function usuario()
+    {
+        return $this->belongsTo(User::class, 'user_id');
     }
 }

@@ -11,12 +11,14 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('detalleTransacciones', function (Blueprint $table) {
+        Schema::create('detalle_transacciones', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('transaccion_id')->nullable()->constrained('transacciones');
-            $table->foreignId('producto_id')->nullable()->constrained('productos');
+            $table->foreignId('transaccion_id')->constrained('transacciones');
+            $table->foreignId('producto_id')->constrained('productos');
+            $table->foreignId(column: 'lote_id')->constrained('lotes');
             $table->integer('cantidad');
-            $table->decimal('precio');
+            $table->decimal('precio_unitario');
+            $table->decimal('subtotal');
             $table->timestamps();
         });
     }

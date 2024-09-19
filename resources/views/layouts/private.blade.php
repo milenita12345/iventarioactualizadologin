@@ -8,7 +8,7 @@
     <meta name='viewport' content='width=device-width, initial-scale=1.0'>
 
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title> Sash – Bootstrap 5  Admin &amp; Dashboard Template </title>
+    <title>Farmatodo – Inventario</title>
     <meta name="Description" content="Bootstrap Responsive Admin Web Dashboard HTML5 Template">
     <meta name="Author" content="Spruko Technologies Private Limited">
 	<meta name="keywords" content="admin dashboard,dashboard design htmlbootstrap admin template,html admin panel,admin dashboard html,admin panel html template,bootstrap dashboard,html admin template,html dashboard,html admin dashboard template,bootstrap dashboard template,dashboard html template,bootstrap admin panel,dashboard admin bootstrap,bootstrap admin dashboard">
@@ -62,7 +62,7 @@
 <body>
     <!-- Loader -->
     <div id="loader" >
-    <img src="../assets/images/media/loader.svg" alt="Cargando...">
+        <img src="{{ asset('assets/images/media/loader.svg') }}" alt="">
     </div>
     <!-- Loader -->
 
@@ -79,9 +79,14 @@
                     <!-- Start::header-element -->
                     <div class="header-element">
                         <div class="horizontal-logo">
-                        <a href="{{ route('dashboard') }}" class="header-logo">
-                            <img src="{{ asset('farma.jpg') }}" alt="Logo Farma" width="120" height="120" class="rounded-circle">
-                        </a>
+                            <a href="{{ route('dashboard') }}" class="header-logo">
+                                <img src="{{ asset('assets/images/Farmatodologo.png') }}" alt="logo" class="desktop-logo">
+                                <img src="{{ asset('assets/images/brand-logos/toggle-logo.png') }}" alt="logo" class="toggle-logo">
+                                <img src="{{ asset('assets/images/Farmatodologo.png') }}" alt="logo" class="desktop-dark">
+                                <img src="{{ asset('assets/images/brand-logos/toggle-dark.png') }}" alt="logo" class="toggle-dark">
+                                <img src="{{ asset('assets/images/Farmatodologo.png') }}" alt="logo" class="desktop-white">
+                                <img src="{{ asset('assets/images/brand-logos/toggle-white.png') }}" alt="logo" class="toggle-white">
+                            </a>
                         </div>
                     </div>
                     <!-- End::header-element -->
@@ -452,7 +457,7 @@
                                 <!--<a class="d-flex w-100" href="sign-in.html"><i class="fe fe-info fs-18 me-2 text-primary"></i>Log Out</a>-->
                                 <form method="POST" action="{{ route('logout') }}">
                                     @csrf
-        
+
                                     <a class="d-flex w-100" href="route('logout')"
                                             onclick="event.preventDefault();
                                                         this.closest('form').submit();">
@@ -479,12 +484,12 @@
             <!-- Start::main-sidebar-header -->
             <div class="main-sidebar-header">
                 <a href="{{ route('dashboard') }}" class="header-logo">
-                    <img src="{{ asset('assets/images/brand-logos/desktop-logo.png') }}" alt="logo" class="desktop-logo">
-                    <img src="{{ asset('assets/images/brand-logos/toggle-logo.png') }}" alt="logo" class="toggle-logo">
-                    <img src="{{ asset('assets/images/brand-logos/desktop-dark.png') }}" alt="logo" class="desktop-dark">
-                    <img src="{{ asset('assets/images/brand-logos/toggle-dark.png') }}" alt="logo" class="toggle-dark">
-                    <img src="{{ asset('assets/images/brand-logos/desktop-white.png') }}" alt="logo" class="desktop-white">
-                    <img src="{{ asset('assets/images/brand-logos/toggle-white.png') }}" alt="logo" class="toggle-white">
+                    <img src="{{ asset('assets/images/Farmatodologo.png') }}" alt="logo" class="desktop-logo img-fluid">
+                    <img src="{{ asset('assets/images/brand-logos/toggle-logo.png') }}" alt="logo" class="toggle-logo  img-fluid">
+                    <img src="{{ asset('assets/images/Farmatodologo.png') }}" alt="logo" class="desktop-dark img-fluid">
+                    <img src="{{ asset('assets/images/brand-logos/toggle-dark.png') }}" alt="logo" class="toggle-dark img-fluid">
+                    <img src="{{ asset('assets/images/Farmatodologo.png') }}" alt="logo" class="desktop-white img-fluid">
+                    <img src="{{ asset('assets/images/brand-logos/toggle-white.png') }}" alt="logo" class="toggle-white img-fluid">
                 </a>
             </div>
             <!-- End::main-sidebar-header -->
@@ -520,21 +525,21 @@
                                 <span class="side-menu__label">Categorías</span>
                             </a>
                         </li>
-                        
+
                         <li class="slide">
                             <a href="{{ route('tipos.index') }}" class="side-menu__item">
                                 <i class="fe fe-tag side-menu__icon"></i>
                                 <span class="side-menu__label">Tipos</span>
                             </a>
                         </li>
-                        
+
                         <li class="slide">
                             <a href="{{ route('laboratorios.index') }}" class="side-menu__item">
                                 <i class="fe fe-list side-menu__icon"></i>
                                 <span class="side-menu__label">Laboratorios</span>
                             </a>
                         </li>
-                        
+
                         <li class="slide">
                             <a href="{{ route('productos.index') }}" class="side-menu__item">
                                 <i class="fe fe-package side-menu__icon"></i>
@@ -544,22 +549,48 @@
 
 
                         <li class="slide__category"><span class="category-name">PERSONAS</span></li>
-
+                        <!--
                         <li class="slide">
                             <a href="{{ route('dashboard') }}" class="side-menu__item">
                                 <i class="fe fe-users side-menu__icon"></i>
                                 <span class="side-menu__label">Usuarios</span>
                             </a>
                         </li>
+                    -->
 
 
                         <li class="slide">
-                            <a href="{{ route('proveedores.index') }}" class="side-menu__item">
-                                <i class="fe fe-truck side-menu__icon"></i>
-                                <span class="side-menu__label">Proveedores</span>
+                            <a href="{{ route('personas.index') }}" class="side-menu__item">
+                                <i class="fe fe-users side-menu__icon"></i>
+                                <span class="side-menu__label">Personas</span>
                             </a>
                         </li>
-                        
+
+                        <li class="slide__category"><span class="category-name">TRANSACCIONES</span></li>
+
+                        <li class="slide">
+                            <a href="{{ route('transacciones.entradas.index') }}" class="side-menu__item">
+                                <i class="fe fe-shopping-cart  side-menu__icon"></i>
+                                <span class="side-menu__label">Compras</span>
+                            </a>
+                        </li>
+
+                        <li class="slide">
+                            <a href="{{ route('transacciones.salidas.index') }}" class="side-menu__item">
+                                <i class="fe fe-dollar-sign side-menu__icon"></i>
+                                <span class="side-menu__label">Ventas</span>
+                            </a>
+                        </li>
+
+                        <li class="slide__category"><span class="category-name">REPORTES</span></li>
+
+                        <li class="slide">
+                            <a href="{{ route('transacciones.salidas.index') }}" class="side-menu__item">
+                                <i class="fe fe-file-text side-menu__icon"></i>
+                                <span class="side-menu__label">Reportes</span>
+                            </a>
+                        </li>
+
                     </ul>
                     <div class="slide-right" id="slide-right"><svg xmlns="http://www.w3.org/2000/svg" fill="#7b8191" width="24" height="24" viewBox="0 0 24 24"> <path d="M10.707 17.707 16.414 12l-5.707-5.707-1.414 1.414L13.586 12l-4.293 4.293z"></path> </svg></div>
                 </nav>
@@ -578,13 +609,23 @@
 
                 <!-- PAGE-HEADER -->
                 <div class="page-header">
-                  <h1 class="page-title my-auto">Dashboard</h1>
+                  <h1 class="page-title my-auto">@yield('page-title', 'Bienvenido')</h1>
                   <div>
                     <ol class="breadcrumb mb-0">
-                      <li class="breadcrumb-item">
-                        <a href="javascript:void(0)">Home</a>
-                      </li>
-                      <li class="breadcrumb-item active" aria-current="page">Dashboard</li>
+                        @if(isset($breadcrumbs) && count($breadcrumbs) > 0)
+                            @foreach($breadcrumbs as $breadcrumb)
+                                <li class="breadcrumb-item {{ $loop->last ? 'active' : '' }}"
+                                    aria-current="{{ $loop->last ? 'page' : '' }}">
+                                    @if(!$loop->last)
+                                        <a href="{{ $breadcrumb['url'] }}">{{ $breadcrumb['name'] }}</a>
+                                    @else
+                                        {{ $breadcrumb['name'] }}
+                                    @endif
+                                </li>
+                            @endforeach
+                        @else
+                            <li class="breadcrumb-item active" aria-current="page">Dashboard</li>
+                        @endif
                     </ol>
                   </div>
                 </div>
@@ -592,7 +633,7 @@
 
                 @yield('content')
 
-                
+
 
             </div>
         </div>
@@ -654,13 +695,11 @@
         <!-- Footer Start -->
         <footer class="footer mt-auto py-3 text-center">
             <div class="container">
-                <span class=""> Copyright © <span id="year"></span> <a
-                        href="javascript:void(0);" class="text-primary">Sash</a>.
-                    Designed with <span class="bi bi-heart-fill text-danger"></span> by <a href="javascript:void(0);">
-                        <span class="text-primary">Spruko</span>
-                    </a> All
-                    rights
-                    reserved
+                <span class=""> Copyright © <span id="year">2024</span> <a
+                        href="javascript:void(0);" class="text-primary">Farmatodo</a>.
+                        Desarrollado por <a href="javascript:void(0);">
+                        <span class="text-primary">Milena Cuellar</span>
+                    </a> Todos los derechos reservados
                 </span>
             </div>
         </footer>
@@ -668,7 +707,7 @@
 
     </div>
 
-    
+
     <!-- Scroll To Top -->
     <div class="scrollToTop">
         <span class="arrow"><i class="ri-arrow-up-s-fill fs-20"></i></span>
@@ -715,15 +754,16 @@
     <!-- index -->
     <script src="{{ asset('assets/js/index.js') }}"></script>
 
-    
+
     <!-- Custom-Switcher JS -->
     <script src="{{ asset('assets/js/custom-switcher.min.js') }}"></script>
 
     <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
-    
+
 
     <!-- Datatables Cdn -->
-    <script src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
+    <!--<script src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>-->
+    <script src="{{ asset('assets/libs/datatables.net-bs5/js/jquery.dataTables.min.js') }}"></script>
     <script src="https://cdn.datatables.net/1.12.1/js/dataTables.bootstrap5.min.js"></script>
     <script src="https://cdn.datatables.net/responsive/2.3.0/js/dataTables.responsive.min.js"></script>
     <script src="https://cdn.datatables.net/buttons/2.2.3/js/dataTables.buttons.min.js"></script>
@@ -733,11 +773,15 @@
     <script src="https://cdn.datatables.net/buttons/2.2.3/js/buttons.html5.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
 
+
+
     <!-- Internal Datatables JS -->
     <script src="{{ asset('assets/js/datatables.js') }}"></script>
 
     <!-- Custom JS -->
     <script src="{{ asset('assets/js/custom.js') }}"></script>
+
+    @yield('script')
 
 </body>
 

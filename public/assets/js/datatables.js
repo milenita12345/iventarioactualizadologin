@@ -3,7 +3,7 @@ $(function (e) {
     // basic datatable
     $('#datatable-basic').DataTable({
         language: {
-            searchPlaceholder: 'Search...',
+            searchPlaceholder: 'Buscar...',
             sSearch: '',
         },
         "pageLength": 10,
@@ -15,7 +15,7 @@ $(function (e) {
     $('#responsiveDataTable').DataTable({
         responsive: true,
         language: {
-            searchPlaceholder: 'Search...',
+            searchPlaceholder: 'Buscar...',
             sSearch: '',
         },
         "pageLength": 10,
@@ -38,7 +38,7 @@ $(function (e) {
             }
         },
         language: {
-            searchPlaceholder: 'Search...',
+            searchPlaceholder: 'Buscar...',
             sSearch: '',
         },
         "pageLength": 10,
@@ -52,7 +52,7 @@ $(function (e) {
             'copy', 'csv', 'excel', 'pdf', 'print'
         ],
         language: {
-            searchPlaceholder: 'Search...',
+            searchPlaceholder: 'Buscar...',
             sSearch: '',
         },
         scrollX: true
@@ -62,7 +62,7 @@ $(function (e) {
     // delete row datatable
     var table = $('#delete-datatable').DataTable({
         language: {
-            searchPlaceholder: 'Search...',
+            searchPlaceholder: 'Buscar...',
             sSearch: '',
         }
     });
@@ -87,7 +87,7 @@ $(function (e) {
         paging: false,
         scrollX: true,
         language: {
-            searchPlaceholder: 'Search...',
+            searchPlaceholder: 'Buscar...',
             sSearch: '',
         },
     });
@@ -107,19 +107,19 @@ $(function (e) {
             },
         ],
         language: {
-            searchPlaceholder: 'Search...',
+            searchPlaceholder: 'Buscar...',
             sSearch: '',
         },
         "pageLength": 10,
         // scrollX: true
     });
     // hidden columns
-    
+
     // add row datatable
     var t = $('#add-row').DataTable({
-        
+
         language: {
-            searchPlaceholder: 'Search...',
+            searchPlaceholder: 'Buscar...',
             sSearch: '',
         },
     });

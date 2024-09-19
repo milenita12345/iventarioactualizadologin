@@ -12,13 +12,13 @@ class Laboratorio extends Model
     protected $table = 'laboratorios';
 
     protected $fillable = [
-        'nombre', 
+        'nombre',
         'descripcion',
         'estado',
         'eliminado'
     ];
 
-    
+
     //RELACIONES DE MODELO
     public function productos()
     {

@@ -18,7 +18,7 @@ class AdminUserSeeder extends Seeder
             'name' => 'Administrador',
             'email' => 'admin@example.com', // Cambia esto al correo que prefieras
             'password' => Hash::make('admin123'),// Cambia esto a la contraseña que prefieras
-            'role' => 'administrador', 
+            'role' => 'administrador',
         ]);
     }
 }

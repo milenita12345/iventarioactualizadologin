@@ -14,11 +14,12 @@ return new class extends Migration
         Schema::create('transacciones', function (Blueprint $table) {
             $table->id();
             $table->string('tipo');//Entrada o Salida | Compra o Venta
-            $table->foreignId('proveedor_id')->nullable()->constrained('proveedores');
-            //$table->foreignId('cliente_id')->nullable()->constrained('clientes');
-            $table->dateTime('fecha');
-            $table->string('nombre_comprobante');
-            $table->string('numero_comprobante');
+            $table->foreignId('persona_id')->nullable()->constrained('personas');
+            $table->date('fecha');
+            $table->string('nombre_comprobante')->nullable();
+            $table->string('numero_comprobante')->nullable();
+            $table->foreignId('user_id')->nullable()->constrained('users');
+            $table->decimal('total');
             $table->string('estado')->default('Activo');
             $table->boolean('eliminado')->default(false);
             $table->timestamps();

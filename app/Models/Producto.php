@@ -12,15 +12,15 @@ class Producto extends Model
     protected $table = 'productos';
 
     protected $fillable = [
-        'nombre', 
+        'nombre',
         'alias',
-        'descripcion', 
-        'codigo', 
-        'categoria_id', 
+        'descripcion',
+        'codigo',
+        'categoria_id',
         'tipo_id',
         'laboratorio_id',
-        'cantidad_minima', 
-        'requiere_receta', 
+        'cantidad_minima',
+        'requiere_receta',
         'estado',
         'eliminado'
     ];
@@ -41,8 +41,18 @@ class Producto extends Model
         return $this->belongsTo(Laboratorio::class);
     }
 
-    public function transacciones()
+    public function precios()
     {
-        return $this->hasMany(Transaccion::class);
+        return $this->hasMany(Precio::class);
+    }
+
+    public function lotes()
+    {
+        return $this->hasMany(Lote::class);
+    }
+
+    public function detalleTransacciones()
+    {
+        return $this->hasMany(DetalleTransaccion::class);
     }
 }
